@@ -1,8 +1,6 @@
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: ["main"]
 name: update ReadMe file to current Time
 jobs:
   build:
