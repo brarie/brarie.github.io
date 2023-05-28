@@ -1,6 +1,8 @@
 on:
   push:
-    branches: [master]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 name: update ReadMe file to current Time
 jobs:
   build:
@@ -25,7 +27,7 @@ jobs:
         git config --global user.name 'brarie'
         git config --global user.email 'psehun6@gmail.com'
         git add -A
-        git commit -am "Updated Recent Modified Time"
+        git commit -m "Updated Recent Modified Time"
     - name: Push README.md
       run: |
         git push origin main
