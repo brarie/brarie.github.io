@@ -26,4 +26,4 @@ jobs:
         git commit -am "Updated Recent Modified Time"
     - name: Push README.md
       run: |
-        git push
+        git push origin main
