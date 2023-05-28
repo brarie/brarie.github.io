@@ -2,7 +2,7 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = 박세훈
+alt = Richard hanrick
 Richard hanrick
 Web developer
 
