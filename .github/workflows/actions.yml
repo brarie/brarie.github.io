@@ -1,10 +1,29 @@
 on: [push]
-name: build
+name: update ReadMe file to current Time
 jobs:
   build:
-    name: Get Current Time
     runs-on: ubuntu-latest
     steps:
-      - name: Get current Time
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+    - uses: actions/checkout@v3
+    - name: Python 3.9 Setup
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9" 
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+
+    - name: Run updateModifiedTime.py
+      run: |
+        python updateModifiedTime.py
+
+    - name: Commit README.md
+      run: |
+        git config --global user.name 'brarie'
+        git config --global user.email 'psehun6@gmail.com'
+        git add -A
+        git commit -am "Updated Recent Modified Time"
+    - name: Push README.md
+      run: |
+        git push
