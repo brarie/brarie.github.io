@@ -1,4 +1,7 @@
 from datetime import datetime
+from pytz import timezone
+
+datetime.now(timezone('Asia/Seoul'))
 
 readme = open("README.md", "w")
 readme.write("Thank you for visiting my blog!\n")
