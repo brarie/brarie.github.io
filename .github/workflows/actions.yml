@@ -1,4 +1,6 @@
-on: [push]
+on:
+  push:
+    branches: [master]
 name: update ReadMe file to current Time
 jobs:
   build:
