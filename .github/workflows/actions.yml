@@ -1,10 +1,10 @@
-name: learn-github-actions
 on: [push]
+name: build
 jobs:
-  check-bats-version:
+  build:
+    name: Get Current Time
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Get current Time
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
